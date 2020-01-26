@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using SimpleCRM.Data;
 
 namespace SimpleCRM.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20200123194627_IdentitySetup")]
+    partial class IdentitySetup
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -217,87 +219,6 @@ namespace SimpleCRM.Data.Migrations
                     b.HasKey("UserId", "LoginProvider", "Name");
 
                     b.ToTable("AspNetUserTokens");
-                });
-
-            modelBuilder.Entity("SimpleCRM.Models.Campaign", b =>
-                {
-                    b.Property<int>("ID")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("CampaignCode")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("CampaignDescription")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("ID");
-
-                    b.ToTable("Campaigns");
-                });
-
-            modelBuilder.Entity("SimpleCRM.Models.Donor", b =>
-                {
-                    b.Property<int>("DDonor")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("Address")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("City")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("LT_Amt")
-                        .HasColumnType("int");
-
-                    b.Property<string>("Name")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("Num_Gifts")
-                        .HasColumnType("int");
-
-                    b.Property<string>("State")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Zip")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("DDonor");
-
-                    b.ToTable("Donors");
-                });
-
-            modelBuilder.Entity("SimpleCRM.Models.Transactions", b =>
-                {
-                    b.Property<int>("TransID")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<float>("TAmount")
-                        .HasColumnType("real");
-
-                    b.Property<string>("TCampaign")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("TDay")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("TDonor")
-                        .HasColumnType("int");
-
-                    b.Property<string>("TMonth")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("TYear")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("TransID");
-
-                    b.ToTable("Transactions");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
