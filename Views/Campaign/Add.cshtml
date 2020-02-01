@@ -1,0 +1,18 @@
+﻿@model SimpleCRM.ViewModels.AddCampaignViewModel
+
+<form asp-controller="Campaign" asp-action="Add" method="post">
+
+    <div class="form-group">
+        <label asp-for="CampaignCode">Campaign Code</label>
+        <input class="form-control" asp-for="CampaignCode" />
+        <span asp-validation-for="CampaignCode"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="CampaignDescription">Campaign Description</label>
+        <input class="form-control" asp-for="CampaignDescription" />
+        <span asp-validation-for="CampaignDescription"></span>
+    </div>
+
+    <input type="submit" value="Add Campaign" />
+
+</form>
