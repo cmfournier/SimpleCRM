@@ -29,6 +29,7 @@ namespace SimpleCRM.Controllers
             return View(addCampaignViewModel);
         }
 
+
         [HttpPost]
         public IActionResult Add(AddCampaignViewModel addCampaignViewModel)
         {
@@ -47,5 +48,11 @@ namespace SimpleCRM.Controllers
             }
             return View();
         }
+
+        public IActionResult Search ()
+        {
+            return View();
+        }
+
     }
 }

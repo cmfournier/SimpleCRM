@@ -1,16 +1,17 @@
 ﻿@model List<SimpleCRM.Models.Campaign>
 
-    <div class="text-center">
-        <h1>Campaign Management</h1>
-    </div>
+<div class="text-center">
+    <h1>Campaign Management</h1>
+</div>
 
 
 
 @foreach (var campaign in Model)
 {
-<ul>
-    <li>@campaign.CampaignDescription</li>
-</ul>
+    <ul>
+        <li>@campaign.CampaignDescription</li>
+    </ul>
 }
 
-<a href="/Campaign/Add">Add New Campaign</a>
+<div><a href="/Campaign/Search">Search for a Campaign</a></div>
+<div><a href="/Campaign/Add">Add New Campaign</a></div>
