@@ -5,13 +5,20 @@
 </div>
 
 
+<table class="table">
+    <tr>
+        <th>Campaign Code</th>
+        <th>Description</th>
+    </tr>
 
-@foreach (var campaign in Model)
-{
-    <ul>
-        <li>@campaign.CampaignDescription</li>
-    </ul>
-}
+    @foreach (var campaign in Model)
+    {
+        <tr>
+            <td>@campaign.CampaignCode</td>
+            <td>@campaign.CampaignDescription</td>
+        </tr>
+    }
+</table>
 
 <div><a href="/Campaign/Search">Search for a Campaign</a></div>
 <div><a href="/Campaign/Add">Add New Campaign</a></div>
