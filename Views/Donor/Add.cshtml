@@ -1,18 +1,11 @@
-﻿
-@model SimpleCRM.Models.Donor;
-
+﻿@model SimpleCRM.ViewModels.AddDonorViewModel
 
 <div class="text-center">
     <h1>Donor Management</h1>
 </div>
 
-<form asp-controller="Donor" asp-action="Index" method="post">
+<form asp-controller="Donor" asp-action="Add" method="post">
     <div class="form-row">
-        <div class="form-group col-md-6">
-            <label asp-for="DDonor">Donor ID</label>
-            <input class="form-control" asp-for="DDonor" />
-            <span asp-validation-for="DDonor"></span>
-        </div>
         <div class="form-group col-md-6">
             <label asp-for="Name">Name</label>
             <input class="form-control" asp-for="Name" />
@@ -47,7 +40,9 @@
         </div>
     </div>
 
-    <input type="submit" value="Search Donors" />
+    <input type="submit" value="Add Donor" />
+
 
 </form>
-<div><a href="/Donor/Add">Add a new donor</a></div>
+
+
