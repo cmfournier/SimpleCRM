@@ -16,5 +16,11 @@ namespace SimpleCRM.ViewModels
 
         [Required(ErrorMessage ="A description is required")]
         public string CampaignDescription { get; set; }
+
+        [Required(ErrorMessage = "Starting campaign month is required")]
+        public string CampaignMonth { get; set; }
+
+        [Required(ErrorMessage = "Campaign year is required")]
+        public string CampaignYear { get; set; }
     }
 }

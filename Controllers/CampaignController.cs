@@ -39,7 +39,9 @@ namespace SimpleCRM.Controllers
                 {
                     ID = addCampaignViewModel.ID,
                     CampaignCode = addCampaignViewModel.CampaignCode,
-                    CampaignDescription = addCampaignViewModel.CampaignDescription
+                    CampaignDescription = addCampaignViewModel.CampaignDescription,
+                    CampaignMonth = addCampaignViewModel.CampaignMonth,
+                    CampaignYear = addCampaignViewModel.CampaignYear
 
                 };
                 context.Campaigns.Add(newCampaign);
