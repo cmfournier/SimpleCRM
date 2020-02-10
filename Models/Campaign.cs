@@ -11,5 +11,8 @@ namespace SimpleCRM.Models
         public int ID { get; set; }
         public string CampaignCode {get; set;}
         public string CampaignDescription { get; set; }
+
+        public string CampaignYear { get; set; }
+        public string CampaignMonth { get; set; }
     }
 }
