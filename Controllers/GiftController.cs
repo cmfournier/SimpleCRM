@@ -19,17 +19,18 @@ namespace SimpleCRM.Controllers
         }
         public IActionResult Index()
         {
-            return View();
-        }
-
-        public IActionResult Add()
-        {
             AddGiftViewModel addGiftViewModel = new AddGiftViewModel();
             return View(addGiftViewModel);
         }
 
+        /*public IActionResult Add()
+        {
+            AddGiftViewModel addGiftViewModel = new AddGiftViewModel();
+            return View(addGiftViewModel);
+        }*/
+
         [HttpPost]
-        public IActionResult Add(AddGiftViewModel addGiftViewModel)
+        public IActionResult Index(AddGiftViewModel addGiftViewModel)
         {
             if (ModelState.IsValid)
             {
@@ -41,7 +42,7 @@ namespace SimpleCRM.Controllers
                 };
                 context.Transactions.Add(newTransaction);
                 context.SaveChanges();
-                return Redirect("/Transactions");
+                return Redirect("/Gift");
             }
             return View();
         }
