@@ -32,11 +32,16 @@ namespace SimpleCRM.Controllers
         [HttpPost]
         public IActionResult Index(AddGiftViewModel addGiftViewModel)
         {
+            
+
             if (ModelState.IsValid)
             {
                 Transactions newTransaction = new Transactions()
                 {
                     TDonor = addGiftViewModel.TDonor,
+                    TYear = addGiftViewModel.currentYear,
+                    TMonth = addGiftViewModel.currentMonth,
+                    TDay = addGiftViewModel.currentDay,
                     TAmount = addGiftViewModel.TAmount,
                     TCampaign = addGiftViewModel.TCampaign
                 };

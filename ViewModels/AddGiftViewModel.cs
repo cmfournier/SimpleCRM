@@ -13,5 +13,10 @@ namespace SimpleCRM.ViewModels
         public string TDay { get; set; }
         public float TAmount { get; set; }
         public string TCampaign { get; set; }
+
+        public readonly string currentYear = DateTime.Now.Year.ToString();
+        public readonly string currentMonth = DateTime.Now.Month.ToString();
+        public readonly string currentDay = DateTime.Now.Day.ToString();
+
     }
 }
