@@ -23,11 +23,6 @@ namespace SimpleCRM.Controllers
             return View(addGiftViewModel);
         }
 
-        /*public IActionResult Add()
-        {
-            AddGiftViewModel addGiftViewModel = new AddGiftViewModel();
-            return View(addGiftViewModel);
-        }*/
 
         [HttpPost]
         public IActionResult Index(AddGiftViewModel addGiftViewModel)
@@ -51,5 +46,16 @@ namespace SimpleCRM.Controllers
             }
             return View();
         }
+
+        /*[AcceptVerbs("GET", "POST")]
+        public IActionResult VerifyDonorID(int donorid)
+        {
+            if (SimpleCRM.Data.)
+            //if (!Donor.VerifyDonorID(donorid))
+                
+            {
+                return Json
+            }
+        }*/
     }
 }
