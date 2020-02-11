@@ -1,24 +1,25 @@
 ﻿@model SimpleCRM.ViewModels.AddCampaignViewModel
 
     <form asp-controller="Campaign" asp-action="Add" method="post">
+        
 
         <div class="form-group">
-            <label asp-for="CampaignCode">Campaign Code</label>
+            <label asp-for="CampaignCode"></label>
             <input class="form-control" asp-for="CampaignCode" />
             <span asp-validation-for="CampaignCode"></span>
         </div>
         <div class="form-group">
-            <label asp-for="CampaignDescription">Campaign Description</label>
+            <label asp-for="CampaignDescription"></label>
             <input class="form-control" asp-for="CampaignDescription" />
             <span asp-validation-for="CampaignDescription"></span>
         </div>
         <div class="form-group">
-            <label asp-for="CampaignMonth">Campaign Month</label>
+            <label asp-for="CampaignMonth"></label>
             <input class="form-control" asp-for="CampaignMonth" />
             <span asp-validation-for="CampaignMonth"></span>
         </div>
         <div class="form-group">
-            <label asp-for="CampaignYear">Campaign Year</label>
+            <label asp-for="CampaignYear"></label>
             <input class="form-control" asp-for="CampaignYear" />
             <span asp-validation-for="CampaignYear"></span>
         </div>

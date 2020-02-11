@@ -48,7 +48,7 @@ namespace SimpleCRM.Controllers
                 context.SaveChanges();
                 return Redirect("/Campaign");
             }
-            return View();
+            return View(addCampaignViewModel);
         }
 
         public IActionResult Search ()

@@ -12,15 +12,19 @@ namespace SimpleCRM.ViewModels
         public int ID { get; set; }
 
         [Required(ErrorMessage = "Campaign code is required")]
+        [Display(Name = "Campaign Code")]
         public string CampaignCode { get; set; }
 
         [Required(ErrorMessage ="A description is required")]
+        [Display(Name = "Campaign Description")]
         public string CampaignDescription { get; set; }
 
         [Required(ErrorMessage = "Starting campaign month is required")]
+        [Display(Name = "Campaign Month")]
         public string CampaignMonth { get; set; }
 
         [Required(ErrorMessage = "Campaign year is required")]
+        [Display(Name = "Campaign Year")]
         public string CampaignYear { get; set; }
     }
 }
