@@ -2,11 +2,13 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using SimpleCRM.Models;
 
 namespace SimpleCRM.Controllers
 {
+    [Authorize]
     public class DonorController : Controller
     {
         public IActionResult Index()

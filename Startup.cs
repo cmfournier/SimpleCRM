@@ -35,7 +35,7 @@ namespace SimpleCRM
                 .AddEntityFrameworkStores<ApplicationDbContext>();
             services.AddControllersWithViews();
             services.AddRazorPages();
-            services.AddAuthentication(IISDefaults.AuthenticationScheme);
+            //services.AddAuthentication(IISDefaults.AuthenticationScheme);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
