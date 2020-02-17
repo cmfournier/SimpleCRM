@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using SimpleCRM.Data;
 using SimpleCRM.Models;
+using SimpleCRM.ViewModels;
 
 namespace SimpleCRM.Controllers
 {
@@ -20,12 +21,42 @@ namespace SimpleCRM.Controllers
         }
         public IActionResult Index()
         {
+            List<Campaign> campaigns = context.Campaigns.ToList();
+            return View(campaigns);
+        }
+
+        public IActionResult Add()
+        {
+            AddCampaignViewModel addCampaignViewModel = new AddCampaignViewModel();
+            return View(addCampaignViewModel);
+        }
+
+
+        [HttpPost]
+        public IActionResult Add(AddCampaignViewModel addCampaignViewModel)
+        {
+            if (ModelState.IsValid)
+            {
+                Campaign newCampaign = new Campaign()
+                {
+                    ID = addCampaignViewModel.ID,
+                    CampaignCode = addCampaignViewModel.CampaignCode,
+                    CampaignDescription = addCampaignViewModel.CampaignDescription,
+                    CampaignMonth = addCampaignViewModel.CampaignMonth,
+                    CampaignYear = addCampaignViewModel.CampaignYear
+
+                };
+                context.Campaigns.Add(newCampaign);
+                context.SaveChanges();
+                return Redirect("/Campaign");
+            }
+            return View(addCampaignViewModel);
+        }
+
+        public IActionResult Search ()
+        {
             return View();
         }
 
-        //public IActionResult Add()
-        //{
-
-        //}
     }
 }
