@@ -1,23 +1,24 @@
-﻿@model SimpleCRM.Models.Campaign;
-@{
-    ViewData["Title"] = "Index";
-}
+﻿@model List<SimpleCRM.Models.Campaign>
 
-    <center><h1>Campaign Management</h1></center>
+<div class="text-center">
+    <h1>Campaign Management</h1>
+</div>
 
-    <form asp-controller="Campaign" asp-action="Add" method="post">
 
-        <div class="form-group">
-            <label asp-for="CampaignCode">Campaign Code</label>
-            <input class="form-control" asp-for="CampaignCode" />
-            <span asp-validation-for="CampaignCode"></span>
-        </div>
-        <div class="form-group">
-            <label asp-for="CampaignDescription">Campaign Description</label>
-            <input class="form-control" asp-for="CampaignDescription" />
-            <span asp-validation-for="CampaignDescription"></span>
-        </div>
+<table class="table">
+    <tr>
+        <th>Campaign Code</th>
+        <th>Description</th>
+    </tr>
 
-        <input type="submit" value="Add Campaign" />
+    @foreach (var campaign in Model)
+    {
+        <tr>
+            <td>@campaign.CampaignCode</td>
+            <td>@campaign.CampaignDescription</td>
+        </tr>
+    }
+</table>
 
-    </form>
+<div><a href="/Campaign/Search">Search for a Campaign</a></div>
+<div><a href="/Campaign/Add">Add New Campaign</a></div>
