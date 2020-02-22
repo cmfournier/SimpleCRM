@@ -1,8 +1,25 @@
 ﻿
-@model SimpleCRM.Models.Transactions;
+@model SimpleCRM.ViewModels.AddGiftViewModel
 
+    <div class="text-center">
+        <h1>Gift Entry</h1>
+    </div>
 
-<div class="text-center">
-    <h1>Gift Entry</h1>
-</div>
-
+<form asp-controller="Gift" asp-action="Index" method="post">
+        <div class="form-group col-md-2">
+            <label asp-for="TDonor"></label>
+            <input class="form-control" asp-for="TDonor" />
+            <span asp-validation-for="TDonor"></span>
+        </div>
+        <div class="form-group col-md-2">
+            <label asp-for="TAmount"></label>
+            <input class="form-control" asp-for="TAmount" />
+            <span asp-validation-for="TAmount"></span>
+        </div>
+        <div class="form-group col-md-2">
+            <label asp-for="TCampaign"></label>
+            <input class="form-control" asp-for="TCampaign" />
+            <span asp-validation-for="TCampaign"></span>
+        </div>
+<input type="submit" value="Add Gift" />
+</form>
