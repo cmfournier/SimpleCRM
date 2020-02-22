@@ -4,6 +4,9 @@
     <h1>Campaign Management</h1>
 </div>
 
+<div class="text-center">
+    <h3>Current Campaigns</h3>
+</div>
 
 <table class="table">
     <tr>
@@ -13,12 +16,19 @@
 
     @foreach (var campaign in Model)
     {
-        <tr>
-            <td>@campaign.CampaignCode</td>
-            <td>@campaign.CampaignDescription</td>
-        </tr>
+        @if (campaign.CampaignYear == DateTime.Now.Year.ToString())
+
+        {
+            <tr>
+                <td>@campaign.CampaignCode</td>
+                <td>@campaign.CampaignDescription</td>
+            </tr>
+        }
     }
 </table>
 
 <div><a href="/Campaign/Search">Search for a Campaign</a></div>
 <div><a href="/Campaign/Add">Add New Campaign</a></div>
+
+
+
