@@ -48,6 +48,43 @@ namespace SimpleCRM.Controllers
             }
             return View();
         }
+        /*[HttpPost]
+        public ActionResult CheckIfCampaign(string TCampaign)
+        {
+            try
+            {
+                return Json(!CampaignExists(TCampaign));
+            }
+            catch (Exception ex)
+            {
+                return Json(false);
+            }
+        }
+        private bool CampaignExists(string TCampaign)
+            List<Campaign> Campaigns = context.Campaigns.ToList();
+            => */
+        /*[HttpPost]
+        public JsonResult IsCampaign(string TCampaign)
+        {
+            return Json(DoesCampaignExist(TCampaign));
+        }
+        public bool DoesCampaignExist(string CampaignCode)
+        {
+            List<Campaign> Campaigns = context.Campaigns.ToList();//new List<Campaign>();
+            var ExistingCampaigns = (from c in Campaigns
+                                     where c.CampaignCode == CampaignCode()
+                                     select new { CampaignCode }).FirstOrDefault();
+            bool status;
+            if (ExistingCampaigns != null)
+            {
+                status = false;
+            }
+            else
+            {
+                status = true;
+            }
+            return status;
+        }*/
 
         /*[AcceptVerbs("GET", "POST")]
         public IActionResult VerifyDonorID(int donorid)

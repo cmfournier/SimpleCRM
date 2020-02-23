@@ -58,5 +58,28 @@ namespace SimpleCRM.Controllers
             return View();
         }
 
+        public async Task<IActionResult> Search(string campaignCode, string searchString)
+        {
+            IQueryable<string> campaignCodeQuery = from m in context.Campaigns
+                                                   orderby m.CampaignCode
+                                                   select m.CampaignCode;
+            var campaigns = from c in context.Campaigns
+                            select c;
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                campaigns = campaigns.Where(s => s.CampaignDescription.Contains(searchString));
+            }
+            if (!string.IsNullOrEmpty(campaignCode))
+            {
+                campaigns = campaigns.Where(x => x.CampaignCode == campaignCode);
+            }
+            var searchCampaignsViewModel = new SearchCampaignsViewModel
+            {
+                CampaignCode = await campaignCodeQuery.Distinct().ToListAsync()),
+            Description = await campaigns.ToListAsync()
+            };
+            return View(await campaigns.ToListAsync());
+
+        }
+
     }
-}
