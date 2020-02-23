@@ -44,6 +44,7 @@ namespace SimpleCRM.Controllers
                 };
                 context.Transactions.Add(newTransaction);
                 context.SaveChanges();
+                TempData["message"] = "Gift posted to database";
                 return Redirect("/Gift");
             }
             return View();
