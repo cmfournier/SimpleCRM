@@ -44,7 +44,8 @@ namespace SimpleCRM.Controllers
                 };
                 context.Donors.Add(newDonor);
                 context.SaveChanges();
-                return Redirect("/Donor");
+                TempData["message"] = "Donor added to database";
+                return Redirect("/Donor/Add");
             }
             return View();
         }
