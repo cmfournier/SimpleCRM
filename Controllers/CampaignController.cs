@@ -58,5 +58,21 @@ namespace SimpleCRM.Controllers
             return View();
         }
 
+        public IActionResult ViewCampaign(string campaignCode)
+        {
+            Campaign Campaign = context.Campaigns.SingleOrDefault(c => c.CampaignCode == campaignCode);
+            /*List<Transactions> gifts = context
+                .Transactions
+                .Include(gift => gift.TAmount)
+                .Where(c => c.TCampaign == campaignCode)
+                .ToList();*/
+            ViewCampaignViewModel viewCampaignViewModel = new ViewCampaignViewModel
+            {
+                Campaign = Campaign//,
+                //Gifts = gifts
+            };
+            return View(viewCampaignViewModel);
+        }
+
     }
 }
